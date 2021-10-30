@@ -23,7 +23,7 @@ public class WorkshopServiceImpl implements WorkshopService{
     @Override
     @Transactional
     public void addWorkshop(WorkshopDirectory workshopDirectory) {
-
+        dao.addWorkshop(workshopDirectory);
     }
 
     @Override

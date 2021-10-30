@@ -43,6 +43,6 @@ public class DetailsController {
 
     @RequestMapping("/deleteDetail")
     public String deleteDetail(@RequestParam int id) {
-        return "redirect:/api/details";
+        return "redirect:/details";
     }
 }
