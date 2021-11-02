@@ -21,6 +21,7 @@
 
     <br><br>
     Цена   <form:input path="price"/>
+    <form:errors path="price"/>
     <input type="submit" value="OK">
 </form:form>
 </body>

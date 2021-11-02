@@ -1,19 +1,52 @@
 package com.xen.spring.db_client.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.io.Serializable;
 
 @Embeddable
 public class ProductionPlanId implements Serializable {
 
-    @MapsId
-    private int detailId;
-    @MapsId
-    private WorkshopDirectoryId wdId;
+
+    @MapsId()
+    @ManyToOne
+    @JoinColumn(name = "detail_id", referencedColumnName = "id")
+    private Detail detail;
+
+    @ManyToOne
+    @JoinColumns({
+            @JoinColumn(name = "workshop_number"
+                    , referencedColumnName = "workshop_number"),
+            @JoinColumn(name = "section_number",
+                    referencedColumnName = "section_number")
+    })
+    private WorkshopDirectory wd;
+    @Column(name = "release_year")
+    @Min(value = 1950)
+    @Max(value = 2022)
     private int releaseYear;
+    @Column(name = "release_month")
     private String releaseMonth;
 
     public ProductionPlanId() {}
+
+
+    public Detail getDetail() {
+        return detail;
+    }
+
+    public void setDetail(Detail detail) {
+        this.detail = detail;
+    }
+
+    public WorkshopDirectory getWd() {
+        return wd;
+    }
+
+    public void setWd(WorkshopDirectory wd) {
+        this.wd = wd;
+    }
 
     public int getReleaseYear() {
         return releaseYear;
@@ -31,19 +64,4 @@ public class ProductionPlanId implements Serializable {
         this.releaseMonth = releaseMonth;
     }
 
-    public int getDetailId() {
-        return detailId;
-    }
-
-    public void setDetailId(int detailId) {
-        this.detailId = detailId;
-    }
-
-    public WorkshopDirectoryId getWdId() {
-        return wdId;
-    }
-
-    public void setWdId(WorkshopDirectoryId wdId) {
-        this.wdId = wdId;
-    }
 }
