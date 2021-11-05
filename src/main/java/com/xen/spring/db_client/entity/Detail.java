@@ -1,39 +1,55 @@
 package com.xen.spring.db_client.entity;
 
-import org.springframework.beans.factory.annotation.Value;
-
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Entity
 @Table(name = "details")
 public class Detail {
 
     @Id
+    @Min(value = 0, message = "Must be not-negative")
     @Column(name = "id")
     private int id;
 
     @Column(name = "detail_type")
     private String detailType;
 
+    @NotEmpty(message = "Must be not empty")
     @Column(name = "detail_name")
     private String detailName;
 
     @Column(name = "measure")
-    @Value("штука")
     private String measure;
 
-    @Min(value = 0, message = "Must be greater than 0 or equal")
+    @Min(value = 0, message = "Must be not-negative")
     @Column(name = "price")
     private double price;
 
-    public Detail() {}
+    @OneToMany(mappedBy = "detail", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<ProductionPlan> planList;
+
+    public Detail()
+    {
+        this.measure = "штука";
+    }
 
     public Detail(String detailType, String detailName, String measure, double price) {
         this.detailType = detailType;
         this.detailName = detailName;
         this.measure = measure;
         this.price = price;
+    }
+
+
+    public List<ProductionPlan> getPlanList() {
+        return planList;
+    }
+
+    public void setPlanList(List<ProductionPlan> planList) {
+        this.planList = planList;
     }
 
     public int getId() {

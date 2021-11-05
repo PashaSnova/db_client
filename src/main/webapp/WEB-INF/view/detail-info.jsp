@@ -9,8 +9,10 @@
 
 
     Номер детали   <form:input path="id"/>
+    <form:errors path="id"/>
     <br><br>
     Наименование   <form:input path="detailName"/>
+    <form:errors path="detailName"/>
     <br><br>
     Тип   <form:select path="detailType">
             <form:option value="покупная" label="Покупная"/>
@@ -18,11 +20,15 @@
     </form:select>
     <br><br>
     Единица измерения   <form:input path="measure"/>
-
     <br><br>
     Цена   <form:input path="price"/>
     <form:errors path="price"/>
     <input type="submit" value="OK">
 </form:form>
+
+
+<br><br>
+<a href="${pageContext.request.contextPath}/details">Вернуться назад</a>
+
 </body>
 </html>

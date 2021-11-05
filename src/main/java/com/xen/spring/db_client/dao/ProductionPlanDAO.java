@@ -14,4 +14,5 @@ public interface ProductionPlanDAO {
 
     public void deletePlan(ProductionPlanId id);
 
+    public ProductionPlan getPlanById(ProductionPlanId id);
 }

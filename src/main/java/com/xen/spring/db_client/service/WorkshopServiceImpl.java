@@ -2,6 +2,7 @@ package com.xen.spring.db_client.service;
 
 import com.xen.spring.db_client.dao.WorkshopDirectoryDAO;
 import com.xen.spring.db_client.entity.WorkshopDirectory;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,12 +30,12 @@ public class WorkshopServiceImpl implements WorkshopService{
     @Override
     @Transactional
     public void deleteWorkshop(int workshopNumber, int sectionNumber) {
-
+        dao.deleteWorkshop(workshopNumber, sectionNumber);
     }
 
     @Override
     @Transactional
     public WorkshopDirectory getWorkshop(int workshopNumber, int sectionNumber) {
-        return null;
+        return dao.getWorkshop(workshopNumber, sectionNumber);
     }
 }

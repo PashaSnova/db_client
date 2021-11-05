@@ -31,8 +31,8 @@ public class DetailDaoImpl implements DetailDAO {
     public void deleteDetail(int id) {
         Session session = factory.getCurrentSession();
         Query query = session.createQuery("delete from Detail " +
-                "where id =:id");
-        query.setParameter("id", id);
+                "where id = :detailId");
+        query.setParameter("detailId", id);
         query.executeUpdate();
     }
 

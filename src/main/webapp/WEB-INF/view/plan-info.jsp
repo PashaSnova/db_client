@@ -4,17 +4,21 @@
 <html>
 
 <body>
-<h2>Production Plan</h2>
+<h2>Информауия о плане выпуска</h2>
 <form:form action="savePlan" modelAttribute="plan">
 
 
-    Номер детали   <form:input path="ppId.detail.id"/>
+    Номер детали   <form:input path="ppId.detail_id"/>
+    <form:errors path="ppId.detail_id"/>
     <br><br>
-    Номер цеха   <form:input path="ppId.wd.wdId.workshopNumber"/>
+    Номер цеха   <form:input path="ppId.wdId.workshopNumber"/>
+    <form:errors path="ppId.wdId.workshopNumber"/>
     <br><br>
-    Номер участка   <form:input path="ppId.wd.wdId.sectionNumber"/>
+    Номер участка   <form:input path="ppId.wdId.sectionNumber"/>
+    <form:errors path="ppId.wdId.sectionNumber"/>
     <br><br>
     Год выпуска   <form:input path="ppId.releaseYear"/>
+    <form:errors path="ppId.releaseYear"/>
     <br><br>
     Месяц выпуска   <form:select path="ppId.releaseMonth">
     <form:option value="январь" label="январь"/>
@@ -33,8 +37,14 @@
 </form:select>
     <br><br>
     План выпуска   <form:input path="releasePlan"/>
+    <form:errors path="releasePlan"/>
     <br><br>
     <input type="submit" value="OK">
 </form:form>
+
+
+<br><br>
+<a href="${pageContext.request.contextPath}/productionPlan">Вернуться назад</a>
+
 </body>
 </html>

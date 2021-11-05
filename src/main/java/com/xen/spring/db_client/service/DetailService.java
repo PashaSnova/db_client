@@ -9,4 +9,8 @@ public interface DetailService {
     public List<Detail> getAllDetails();
 
     public void addDetail(Detail detail);
+
+    public void deleteDetail(int id);
+
+    public Detail getDetail(int id);
 }

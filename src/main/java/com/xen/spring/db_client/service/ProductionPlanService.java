@@ -13,4 +13,6 @@ public interface ProductionPlanService {
     public void addPlan(ProductionPlan pp);
 
     public void deletePlan(ProductionPlanId id);
+
+    public ProductionPlan getPlanById(ProductionPlanId id);
 }

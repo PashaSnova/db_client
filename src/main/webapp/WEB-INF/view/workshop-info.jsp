@@ -4,7 +4,7 @@
 <html>
 
 <body>
-<h2>Workshop and Section Info</h2>
+<h2>Информация и цехах и участках</h2>
 <form:form action="saveWorkshopSection" modelAttribute="workshopDirectory">
 
 
@@ -13,10 +13,16 @@
     Номер участка   <form:input path="wdId.sectionNumber"/>
     <br><br>
     Имя участка   <form:input path="sectionName"/>
+    <form:errors path="sectionName"/>
     <br><br>
     Id ответственного   <form:input path="masterId"/>
+    <form:errors path="masterId"/>
     <br><br>
     <input type="submit" value="OK">
 </form:form>
+
+
+<br><br>
+<a href="${pageContext.request.contextPath}/workshops">Вернуться назад</a>
 </body>
 </html>

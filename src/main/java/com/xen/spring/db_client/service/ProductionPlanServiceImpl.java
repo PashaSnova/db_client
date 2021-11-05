@@ -31,6 +31,12 @@ public class ProductionPlanServiceImpl implements ProductionPlanService {
     @Override
     @Transactional
     public void deletePlan(ProductionPlanId id) {
+        dao.deletePlan(id);
+    }
 
+    @Override
+    @Transactional
+    public ProductionPlan getPlanById(ProductionPlanId id) {
+        return dao.getPlanById(id);
     }
 }

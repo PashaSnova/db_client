@@ -1,5 +1,6 @@
 package com.xen.spring.db_client.entity;
 
+
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -8,44 +9,43 @@ import java.io.Serializable;
 @Embeddable
 public class ProductionPlanId implements Serializable {
 
+    @Min(value = 0, message = "Must be not-negative")
+    private int detail_id;
 
-    @MapsId()
-    @ManyToOne
-    @JoinColumn(name = "detail_id", referencedColumnName = "id")
-    private Detail detail;
+    WorkshopDirectoryId wdId;
 
-    @ManyToOne
-    @JoinColumns({
-            @JoinColumn(name = "workshop_number"
-                    , referencedColumnName = "workshop_number"),
-            @JoinColumn(name = "section_number",
-                    referencedColumnName = "section_number")
-    })
-    private WorkshopDirectory wd;
     @Column(name = "release_year")
-    @Min(value = 1950)
-    @Max(value = 2022)
+    @Min(value = 1950, message = "Must be greater than 1949")
+    @Max(value = 2050, message = "Must be less than 2051")
     private int releaseYear;
+
+
     @Column(name = "release_month")
     private String releaseMonth;
 
     public ProductionPlanId() {}
 
-
-    public Detail getDetail() {
-        return detail;
+    public ProductionPlanId(int detail_id, WorkshopDirectoryId wdId, int releaseYear, String releaseMonth) {
+        this.detail_id = detail_id;
+        this.wdId = wdId;
+        this.releaseYear = releaseYear;
+        this.releaseMonth = releaseMonth;
     }
 
-    public void setDetail(Detail detail) {
-        this.detail = detail;
+    public WorkshopDirectoryId getWdId() {
+        return wdId;
     }
 
-    public WorkshopDirectory getWd() {
-        return wd;
+    public void setWdId(WorkshopDirectoryId wdId) {
+        this.wdId = wdId;
     }
 
-    public void setWd(WorkshopDirectory wd) {
-        this.wd = wd;
+    public int getDetail_id() {
+        return detail_id;
+    }
+
+    public void setDetail_id(int detail_id) {
+        this.detail_id = detail_id;
     }
 
     public int getReleaseYear() {

@@ -25,4 +25,16 @@ public class DetailServiceImpl implements DetailService {
     public void addDetail(Detail detail) {
         dao.addDetail(detail);
     }
+
+    @Override
+    @Transactional
+    public void deleteDetail(int id) {
+        dao.deleteDetail(id);
+    }
+
+    @Override
+    @Transactional
+    public Detail getDetail(int id) {
+        return dao.getDetail(id);
+    }
 }

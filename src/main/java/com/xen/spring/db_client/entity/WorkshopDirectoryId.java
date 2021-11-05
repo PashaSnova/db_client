@@ -9,12 +9,12 @@ import java.util.Objects;
 @Embeddable
 public class WorkshopDirectoryId implements Serializable {
 
-    @Min(value = 0, message = "Must be greater than 0 or equal")
+    @Min(value = 0, message = "Must be be not-negative")
     @Column(name = "workshop_number")
     private int workshopNumber;
 
 
-    @Min(value = 0, message = "Must be greater than 0 or equal")
+    @Min(value = 0, message = "Must be not-negative")
     @Column(name = "section_number")
     private int sectionNumber;
 
