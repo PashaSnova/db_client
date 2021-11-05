@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>All details</h2>
+<h2>Детали</h2>
 
 <br>
 

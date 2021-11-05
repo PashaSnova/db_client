@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Production Plan</h2>
+<h2>План выпуска</h2>
 
 <br>
 

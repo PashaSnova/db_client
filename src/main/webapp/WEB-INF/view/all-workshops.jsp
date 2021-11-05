@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>All workshops</h2>
+<h2>Цеха и участки</h2>
 
 <br>
 
