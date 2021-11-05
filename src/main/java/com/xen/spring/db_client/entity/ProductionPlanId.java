@@ -32,6 +32,8 @@ public class ProductionPlanId implements Serializable {
         this.releaseMonth = releaseMonth;
     }
 
+
+
     public WorkshopDirectoryId getWdId() {
         return wdId;
     }

@@ -15,4 +15,6 @@ public interface ProductionPlanService {
     public void deletePlan(ProductionPlanId id);
 
     public ProductionPlan getPlanById(ProductionPlanId id);
+
+    public List<ProductionPlan> getPlanByDetail(int id);
 }

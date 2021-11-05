@@ -3,9 +3,12 @@ package com.xen.spring.db_client.dao;
 import com.xen.spring.db_client.entity.WorkshopDirectory;
 import com.xen.spring.db_client.entity.WorkshopDirectoryId;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.Query;
 import java.util.List;
 
 @Repository

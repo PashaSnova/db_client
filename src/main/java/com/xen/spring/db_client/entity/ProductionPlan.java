@@ -31,6 +31,7 @@ public class ProductionPlan {
 
     public ProductionPlan() {}
 
+
     public Detail getDetail() {
         return detail;
     }

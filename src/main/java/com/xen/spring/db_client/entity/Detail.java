@@ -10,6 +10,7 @@ import java.util.List;
 public class Detail {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Min(value = 0, message = "Must be not-negative")
     @Column(name = "id")
     private int id;

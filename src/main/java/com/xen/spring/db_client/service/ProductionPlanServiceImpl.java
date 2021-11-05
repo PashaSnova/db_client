@@ -39,4 +39,10 @@ public class ProductionPlanServiceImpl implements ProductionPlanService {
     public ProductionPlan getPlanById(ProductionPlanId id) {
         return dao.getPlanById(id);
     }
+
+    @Override
+    @Transactional
+    public List<ProductionPlan> getPlanByDetail(int id) {
+        return dao.planByDetail(id);
+    }
 }

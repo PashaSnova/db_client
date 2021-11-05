@@ -9,7 +9,7 @@
 
 <table>
     <tr>
-        <th>Id</th><th>Detail name</th><th>Detail type</th><th>Measure</th><th>Price</th>
+        <th>Id</th><th>Detail name</th><th>Detail type</th><th>Measure</th><th>Price</th><th>Операции</th>
     </tr>
     <c:forEach var="detail" items="${allDetails}">
         <c:url var="updateButton" value="/updateDetail">
@@ -20,16 +20,23 @@
             <c:param name="detailId" value="${detail.id}"/>
         </c:url>
 
+        <c:url var="planPutton" value="/planByDetail">
+            <c:param name="detailId" value="${detail.id}"/>
+        </c:url>
+
         <tr>
             <td>${detail.id}</td>
             <td>${detail.detailName}</td>
             <td>${detail.detailType}</td>
             <td>${detail.measure}</td>
             <td>${detail.price}</td>
-            <td><input type="button" value="Update"
+            <td><input type="button" value="Обновить"
                        onclick="window.location.href = '${updateButton}'">
-                <input type="button" value="Delete"
-                       onclick="window.location.href = '${deleteButton}'"></td>
+                <input type="button" value="Удалить"
+                       onclick="window.location.href = '${deleteButton}'">
+                <input type="button" value="Посмотреть связанный план"
+                       onclick="window.location.href = '${planPutton}'"></td>
+
         </tr>
    </c:forEach>
 </table>

@@ -1,7 +1,9 @@
 package com.xen.spring.db_client.controller;
 
+import com.xen.spring.db_client.dao.ProductionPlanDAO;
 import com.xen.spring.db_client.entity.Detail;
 import com.xen.spring.db_client.service.DetailService;
+import com.xen.spring.db_client.service.ProductionPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,8 @@ public class DetailsController {
     @Autowired
     private DetailService service;
 
+    @Autowired
+    private ProductionPlanService planService;
 
     @RequestMapping("/details")
     public String getAllDetails(Model model) {
@@ -59,10 +63,18 @@ public class DetailsController {
         return "detail-info";
     }
 
-    @ExceptionHandler
-    public String handleException(Exception exception) {
-        return "error-info-detail";
+    @RequestMapping("/planByDetail")
+    public String planByDetail(@RequestParam("detailId") int id, Model model) {
+        model.addAttribute("plan", planService.getPlanByDetail(id));
+        model.addAttribute("detId", id);
+        return "plan-by-detail";
     }
+
+
+//    @ExceptionHandler
+//    public String handleException(Exception exception) {
+//        return "error-info-detail";
+//    }
 
 
 }

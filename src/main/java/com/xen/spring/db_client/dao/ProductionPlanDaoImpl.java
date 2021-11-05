@@ -51,4 +51,13 @@ public class ProductionPlanDaoImpl implements ProductionPlanDAO {
                 .getCurrentSession()
                 .get(ProductionPlan.class, id);
     }
+
+    @Override
+    public List<ProductionPlan> planByDetail(int id) {
+        return factory
+                .getCurrentSession()
+                .createQuery("from ProductionPlan where detail.id =: id", ProductionPlan.class)
+                .setParameter("id", id)
+                .getResultList();
+    }
 }

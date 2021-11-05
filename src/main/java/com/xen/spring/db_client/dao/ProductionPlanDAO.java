@@ -1,6 +1,5 @@
 package com.xen.spring.db_client.dao;
 
-import com.xen.spring.db_client.entity.Detail;
 import com.xen.spring.db_client.entity.ProductionPlan;
 import com.xen.spring.db_client.entity.ProductionPlanId;
 
@@ -15,4 +14,6 @@ public interface ProductionPlanDAO {
     public void deletePlan(ProductionPlanId id);
 
     public ProductionPlan getPlanById(ProductionPlanId id);
+
+    public List<ProductionPlan> planByDetail(int id);
 }
