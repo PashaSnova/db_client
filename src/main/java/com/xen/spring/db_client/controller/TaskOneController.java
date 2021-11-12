@@ -25,12 +25,15 @@ public class TaskOneController {
     @Autowired
     private WorkshopService workshopService;
 
+    @Autowired
+    private Addition addition;
+
     @RequestMapping("/taskOneVariantOne")
     public String taskOneVariantOne(HttpServletRequest request,
                                     Model model) {
         String month = request.getParameter("month");
         String year = request.getParameter("year");
-        if (Addition.taskOneHasParameters(month, year, model)) {
+        if (addition.taskOneHasParameters(month, year, model)) {
             List<ProductionPlan> plan = planService.taskOneVariantOne(month, Integer.parseInt(year));
             model.addAttribute("plan", plan);
         }
@@ -42,7 +45,7 @@ public class TaskOneController {
     public String taskOneVariantTwo(HttpServletRequest request, Model model){
         String month = request.getParameter("month");
         String year = request.getParameter("year");
-        if (Addition.taskOneHasParameters(month, year, model)) {
+        if (addition.taskOneHasParameters(month, year, model)) {
             List<ProductionPlan> plan = planService.getPlan();
             List<ProductionPlan> resultPlan = new ArrayList<>();
             for (ProductionPlan row : plan) {
@@ -59,7 +62,7 @@ public class TaskOneController {
     public String taskOneVariantThree(HttpServletRequest request, Model model) {
         String month = request.getParameter("month");
         String year = request.getParameter("year");
-        if (Addition.taskOneHasParameters(month, year, model)) {
+        if (addition.taskOneHasParameters(month, year, model)) {
             List<WorkshopDirectory> wd = workshopService.getAllWorkshops();
             ArrayList<ProductionPlan> result = new ArrayList<>();
             for (WorkshopDirectory row : wd) {
