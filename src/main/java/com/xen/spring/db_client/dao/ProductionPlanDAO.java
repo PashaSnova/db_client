@@ -16,4 +16,10 @@ public interface ProductionPlanDAO {
     public ProductionPlan getPlanById(ProductionPlanId id);
 
     public List<ProductionPlan> planByDetail(int id);
+
+    public List<ProductionPlan> planByWorkshop(int wNumber, int sNumber);
+
+    public double countPlan(String section);
+
+    public List<ProductionPlan> taskOneVariantOne(String month, int year);
 }

@@ -2,6 +2,7 @@ package com.xen.spring.db_client.controller;
 
 import com.xen.spring.db_client.entity.Detail;
 import com.xen.spring.db_client.entity.WorkshopDirectory;
+import com.xen.spring.db_client.service.ProductionPlanService;
 import com.xen.spring.db_client.service.WorkshopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,10 +22,14 @@ public class WorkshopsController {
     @Autowired
     WorkshopService service;
 
+    @Autowired
+    ProductionPlanService planService;
+
     @RequestMapping("/workshops")
     public String getAllWorkshops(Model model) {
         List<WorkshopDirectory> list = service.getAllWorkshops();
         model.addAttribute("workshops", list);
+        model.addAttribute("sectionName", "");
         return "all-workshops";
     }
 
@@ -58,6 +63,17 @@ public class WorkshopsController {
         WorkshopDirectory wd = service.getWorkshop(wNumber, sNumber);
         model.addAttribute("workshopDirectory", wd);
         return "workshop-info";
+    }
+
+
+    @RequestMapping("/planByWorkshop")
+    public String planByDetail(@RequestParam("wNumber") int wNumber,
+                               @RequestParam("sNumber") int sNumber,
+                               Model model) {
+        model.addAttribute("plan", planService.getPlanByWorkshop(wNumber, sNumber));
+        model.addAttribute("wNumber", wNumber);
+        model.addAttribute("sNumber", sNumber);
+        return "plan-by-workshop";
     }
 
 

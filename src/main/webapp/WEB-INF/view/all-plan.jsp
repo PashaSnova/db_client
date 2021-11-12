@@ -9,7 +9,7 @@
 
 <table>
     <tr>
-        <th>Номер детали</th><th>Номер цеха</th><th>Номер участка</th><th>Год выпуска</th><th>Месяц выпуска</th><th>План выпуска</th>
+        <th>Номер детали</th><th>Номер цеха</th><th>Номер участка</th><th>Год выпуска</th><th>Месяц выпуска</th><th>План выпуска</th><th>Операции</th>
     </tr>
     <c:forEach var="plan" items="${plan}">
                 <c:url var="updateButton" value="/updatePlan">
@@ -34,9 +34,9 @@
             <td>${plan.ppId.releaseYear}</td>
             <td>${plan.ppId.releaseMonth}</td>
             <td>${plan.releasePlan}</td>
-                    <td><input type="button" value="Update"
+                    <td><input type="button" value="Обновить"
                                        onclick="window.location.href = '${updateButton}'">
-                                <input type="button" value="Delete"
+                                <input type="button" value="Удалить"
                                        onclick="window.location.href = '${deleteButton}'"></td>
         </tr>
     </c:forEach>
@@ -44,7 +44,7 @@
 
 <br>
 
-<input type="button" value="Add" onclick="window.location.href = 'addPlan'"/>
+<input type="button" value="Добавить" onclick="window.location.href = 'addPlan'"/>
 
 <br><br>
 <a href="${pageContext.request.contextPath}/">Вернуться назад</a>

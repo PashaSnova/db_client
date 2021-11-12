@@ -45,4 +45,22 @@ public class ProductionPlanServiceImpl implements ProductionPlanService {
     public List<ProductionPlan> getPlanByDetail(int id) {
         return dao.planByDetail(id);
     }
+
+    @Override
+    @Transactional
+    public List<ProductionPlan> getPlanByWorkshop(int wNumber, int sNumber) {
+        return dao.planByWorkshop(wNumber, sNumber);
+    }
+
+    @Override
+    @Transactional
+    public double countSum(String section) {
+        return dao.countPlan(section);
+    }
+
+    @Override
+    @Transactional
+    public List<ProductionPlan> taskOneVariantOne(String month, int year) {
+        return dao.taskOneVariantOne(month, year);
+    }
 }

@@ -3,8 +3,7 @@
 <html>
 <body>
 
-План выпуска детали с номером ${detId.intValue()}:
-
+План выпуска участка с номером ${sNumber.intValue()} цеха с номером ${wNumber.intValue()}:
 <br>
 <br>
 
@@ -25,7 +24,7 @@
 </table>
 
 <br><br>
-<a href="${pageContext.request.contextPath}/details">Вернуться назад</a>
+<a href="${pageContext.request.contextPath}/workshops">Вернуться назад</a>
 
 <br>
 

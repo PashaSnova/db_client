@@ -28,6 +28,15 @@
 <a href="${pageContext.request.contextPath}/all">Всё сразу</a>
 <br>
 <br>
+<a href="${pageContext.request.contextPath}/taskOneVariantOne">Решение задачи 1 первым способом</a>
+<br>
+<br>
+<a href="${pageContext.request.contextPath}/taskOneVariantOne">Решение задачи 1 вторым способом</a>
+<br>
+<br>
+<a href="${pageContext.request.contextPath}/taskOneVariantOne">Решение задачи 1 третьим способом</a>
+
+
 
 </body>
 </html>

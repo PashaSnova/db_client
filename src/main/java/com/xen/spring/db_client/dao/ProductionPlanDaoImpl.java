@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.ParameterMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,6 +59,47 @@ public class ProductionPlanDaoImpl implements ProductionPlanDAO {
                 .getCurrentSession()
                 .createQuery("from ProductionPlan where detail.id =: id", ProductionPlan.class)
                 .setParameter("id", id)
+                .getResultList();
+    }
+
+    @Override
+    public List<ProductionPlan> planByWorkshop(int wNumber, int sNumber) {
+        return factory
+                .getCurrentSession()
+                .createQuery("from ProductionPlan" +
+                        " where ppId.wdId.workshopNumber=:wNumber" +
+                        " and ppId.wdId.sectionNumber=:sNumber", ProductionPlan.class)
+                .setParameter("wNumber", wNumber)
+                .setParameter("sNumber", sNumber)
+                .getResultList();
+    }
+
+    @Override
+    public double countPlan(String section) {
+
+        return factory
+                .getCurrentSession()
+                .createQuery("from WorkshopDirectory where sectionName=:section", WorkshopDirectory.class)
+                .setParameter("section", section)
+                .getResultList().size() == 0 ? -1 :
+                (double)factory
+                .getCurrentSession()
+                .createStoredProcedureQuery("count_plan_by_section")
+                .registerStoredProcedureParameter("sect_name", String.class, ParameterMode.IN)
+                .registerStoredProcedureParameter("summary", Double.class, ParameterMode.OUT)
+                .setParameter("sect_name", section)
+                .getOutputParameterValue("summary");
+    }
+
+    @Override
+    public List<ProductionPlan> taskOneVariantOne(String month, int year) {
+        return factory
+                .getCurrentSession()
+                .createQuery("select pp from ProductionPlan pp " +
+                        "join WorkshopDirectory wd on pp.ppId.wdId = wd.wdId " +
+                        "where pp.ppId.releaseYear=:year and pp.ppId.releaseMonth=:month", ProductionPlan.class)
+                .setParameter("year", year)
+                .setParameter("month", month)
                 .getResultList();
     }
 }

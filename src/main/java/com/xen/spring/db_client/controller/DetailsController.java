@@ -71,10 +71,10 @@ public class DetailsController {
     }
 
 
-//    @ExceptionHandler
-//    public String handleException(Exception exception) {
-//        return "error-info-detail";
-//    }
+    @ExceptionHandler
+    public String handleException(Exception exception) {
+        return "error-info-detail";
+    }
 
 
 }

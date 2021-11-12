@@ -17,12 +17,14 @@ public class ProductionPlan {
 
 
     @MapsId("detail_id")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
+            //(fetch = FetchType.LAZY)
     @JoinColumn(name = "detail_id", referencedColumnName = "id")
     private Detail detail;
 
     @MapsId("wdId")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
+            //(fetch = FetchType.LAZY)
     @JoinColumns({
             @JoinColumn(name = "workshop_number", referencedColumnName = "workshop_number"),
             @JoinColumn(name = "section_number", referencedColumnName = "section_number")

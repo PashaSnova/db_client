@@ -4,7 +4,7 @@
 <html>
 
 <body>
-<h2>Информауия о плане выпуска</h2>
+<h2>Информация о плане выпуска</h2>
 <form:form action="savePlan" modelAttribute="plan">
 
 

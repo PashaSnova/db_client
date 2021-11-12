@@ -24,7 +24,7 @@ public class WorkshopDirectory {
 
 
 
-    @OneToMany(mappedBy = "wd", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "wd", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<ProductionPlan> planList;
 
     public WorkshopDirectory() {}

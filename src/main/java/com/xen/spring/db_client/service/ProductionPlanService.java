@@ -17,4 +17,10 @@ public interface ProductionPlanService {
     public ProductionPlan getPlanById(ProductionPlanId id);
 
     public List<ProductionPlan> getPlanByDetail(int id);
+
+    public List<ProductionPlan> getPlanByWorkshop(int wNumber, int sNumber);
+
+    public double countSum(String section);
+
+    public List<ProductionPlan> taskOneVariantOne(String month, int year);
 }

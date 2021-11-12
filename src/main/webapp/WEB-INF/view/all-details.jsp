@@ -9,7 +9,7 @@
 
 <table>
     <tr>
-        <th>Id</th><th>Detail name</th><th>Detail type</th><th>Measure</th><th>Price</th><th>Операции</th>
+        <th>Номер</th><th>Название</th><th>Тип</th><th>Ед. измерения</th><th>Цена</th><th>Операции</th>
     </tr>
     <c:forEach var="detail" items="${allDetails}">
         <c:url var="updateButton" value="/updateDetail">
@@ -43,7 +43,7 @@
 
 <br>
 
-<input type="button" value="Add" onclick="window.location.href = 'addDetail'"/>
+<input type="button" value="Добавить" onclick="window.location.href = 'addDetail'"/>
 
 
 <br><br>
