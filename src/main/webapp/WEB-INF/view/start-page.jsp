@@ -31,10 +31,10 @@
 <a href="${pageContext.request.contextPath}/taskOneVariantOne">Решение задачи 1 первым способом</a>
 <br>
 <br>
-<a href="${pageContext.request.contextPath}/taskOneVariantOne">Решение задачи 1 вторым способом</a>
+<a href="${pageContext.request.contextPath}/taskOneVariantTwo">Решение задачи 1 вторым способом</a>
 <br>
 <br>
-<a href="${pageContext.request.contextPath}/taskOneVariantOne">Решение задачи 1 третьим способом</a>
+<a href="${pageContext.request.contextPath}/taskOneVariantThree">Решение задачи 1 третьим способом</a>
 
 
 
