@@ -2,7 +2,6 @@ package com.xen.spring.db_client.controller;
 
 import com.xen.spring.db_client.entity.ProductionPlan;
 import com.xen.spring.db_client.entity.ProductionPlanId;
-import com.xen.spring.db_client.entity.WorkshopDirectory;
 import com.xen.spring.db_client.entity.WorkshopDirectoryId;
 import com.xen.spring.db_client.service.ProductionPlanService;
 import org.springframework.beans.factory.annotation.Autowired;

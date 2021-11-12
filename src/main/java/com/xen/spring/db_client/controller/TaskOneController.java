@@ -9,8 +9,8 @@ import com.xen.spring.db_client.service.WorkshopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -74,6 +74,11 @@ public class TaskOneController {
             }
             model.addAttribute("result", result);
         }
+        return "task-1";
+    }
+
+    @ExceptionHandler
+    public String handleException(Exception exception) {
         return "task-1";
     }
 

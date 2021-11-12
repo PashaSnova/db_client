@@ -1,6 +1,5 @@
 package com.xen.spring.db_client.controller;
 
-import com.xen.spring.db_client.entity.Detail;
 import com.xen.spring.db_client.entity.WorkshopDirectory;
 import com.xen.spring.db_client.service.ProductionPlanService;
 import com.xen.spring.db_client.service.WorkshopService;

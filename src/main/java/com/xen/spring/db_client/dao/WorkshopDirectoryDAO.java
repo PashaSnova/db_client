@@ -1,6 +1,5 @@
 package com.xen.spring.db_client.dao;
 
-import com.xen.spring.db_client.entity.Detail;
 import com.xen.spring.db_client.entity.WorkshopDirectory;
 
 import java.util.List;

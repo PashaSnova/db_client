@@ -1,11 +1,9 @@
 package com.xen.spring.db_client.controller;
 
-import com.xen.spring.db_client.dao.ProductionPlanDAO;
 import com.xen.spring.db_client.entity.Detail;
 import com.xen.spring.db_client.service.DetailService;
 import com.xen.spring.db_client.service.ProductionPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

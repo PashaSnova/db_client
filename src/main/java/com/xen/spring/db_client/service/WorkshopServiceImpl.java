@@ -2,7 +2,6 @@ package com.xen.spring.db_client.service;
 
 import com.xen.spring.db_client.dao.WorkshopDirectoryDAO;
 import com.xen.spring.db_client.entity.WorkshopDirectory;
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

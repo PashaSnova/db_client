@@ -1,7 +1,6 @@
 package com.xen.spring.db_client.dao;
 
 import com.xen.spring.db_client.entity.Detail;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
